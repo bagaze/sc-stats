@@ -1,10 +1,11 @@
 import { 
   Header as MTHeader,
   MediaQuery,
-  Space,
   Text,
-  Burger
+  Burger,
+  Group,
 } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { ReactComponent as FilmIcon } from '../img/film.svg';
 
 function Header({ navbarOpened, setNavbarOpened }: Props) {
@@ -20,9 +21,12 @@ function Header({ navbarOpened, setNavbarOpened }: Props) {
           />
         </MediaQuery>
 
-        <FilmIcon width="2rem" />
-        <Space w='sm' />
-        <Text size='xl' weight='bold'>Application header</Text>
+        <Link to='/'>
+          <Group spacing="sm">
+            <FilmIcon width="2rem" />
+            <Text size='xl' weight='bold'>SC Stats</Text>
+          </Group>
+        </Link>
       </div>
     </MTHeader>
   );

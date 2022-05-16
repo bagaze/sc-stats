@@ -3,7 +3,9 @@ import { AppShell } from '@mantine/core';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import Index from './components/Index';
+import Index from './pages/Index';
+import List from './pages/List';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [navbarOpened, setNavbarOpened] = useState(false);
@@ -22,7 +24,12 @@ function App() {
         <Header navbarOpened={navbarOpened} setNavbarOpened={setNavbarOpened} />
       }
     >
-      <Index />
+      <Routes>
+        <Route path='/' element={<Index />} />
+        <Route path='list'>
+          <Route path=':year' element={<List />} />
+        </Route>
+      </Routes>
     </AppShell>
   );
 }
