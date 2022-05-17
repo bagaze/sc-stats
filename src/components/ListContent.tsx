@@ -87,7 +87,7 @@ export default function ListContent({ year }: Props) {
           <Text>{productCount}</Text>
           <Title order={3}>Note moyenne</Title>
           <Text>{avg.toFixed(2)}</Text>
-          <Title order={3}>Nombre de salles différents</Title>
+          <Title order={3}>Nombre de salles différentes</Title>
           <Text>{Object.keys(sortedMovieTheatersList).length}</Text>
           <Title order={3}>Classement par salles</Title>
           <List>
