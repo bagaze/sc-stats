@@ -22,9 +22,15 @@ export default function ListContent({ year }: Props) {
     return (
       <Stack spacing="md">
         <Title order={1}>Vu au cinéma en ...</Title>
-        <Skeleton height={8} radius="xl" />
-        <Skeleton height={8} radius="xl" />
-        <Skeleton height={8} radius="xl" />
+        <Skeleton height={8} radius="xl" width="50%" />
+        <Skeleton height={8} radius="xl" width="70%" />
+        <Skeleton height={8} radius="xl" width="90%" />
+        <Skeleton height={8} radius="xl" width="70%" />
+        <Skeleton height={8} radius="xl" width="50%" />
+        <Skeleton height={8} radius="xl" width="70%" />
+        <Skeleton height={8} radius="xl" width="90%" />
+        <Skeleton height={8} radius="xl" width="70%" />
+        <Skeleton height={8} radius="xl" width="50%" />
       </Stack>
     );
   }
@@ -77,13 +83,13 @@ export default function ListContent({ year }: Props) {
       <>
         <Stack spacing="sm">
           <Title order={1}>{label}</Title>
-          <Title order={2}>Nombre de films</Title>
+          <Title order={3}>Nombre de films</Title>
           <Text>{productCount}</Text>
-          <Title order={2}>Note moyenne</Title>
+          <Title order={3}>Note moyenne</Title>
           <Text>{avg.toFixed(2)}</Text>
-          <Title order={2}>Nombre de salles différents</Title>
+          <Title order={3}>Nombre de salles différents</Title>
           <Text>{Object.keys(sortedMovieTheatersList).length}</Text>
-          <Title order={2}>Classement par salles</Title>
+          <Title order={3}>Classement par salles</Title>
           <List>
             {listItems}
           </List>
