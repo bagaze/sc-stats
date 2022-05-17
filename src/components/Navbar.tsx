@@ -3,7 +3,7 @@ import {
   Navbar as MTNavbar,
   Text,
   Button,
-  Space,
+  Center,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { USERLIST_IDS } from '../config/consts';
@@ -23,9 +23,8 @@ function Navbar({navbarOpened, setNavbarOpened}: Props) {
 
   return (
     <MTNavbar p="md" hiddenBreakpoint="sm" hidden={!navbarOpened} width={{ sm: 200, lg: 300 }}>
-      <Stack spacing={0}>
-        <Text weight="bold">Vu au cinéma en ...</Text>
-        <Space h="md" />
+      <Stack spacing="xs">
+        <Center><Text weight="bold">Vu au cinéma en ...</Text></Center>
         {renderListLinks}
       </Stack>
     </MTNavbar>
