@@ -6,15 +6,19 @@ import {
   Space,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
+import { USERLIST_IDS } from '../config/consts';
 
 function Navbar({navbarOpened}: Props) {
+  const renderListLinks = Object.keys(USERLIST_IDS).sort().reverse().map( (k) => (
+      <Button key={k} component={Link} to={`/list/${k}`} variant="default">{k}</Button>
+  ) );
+
   return (
     <MTNavbar p="md" hiddenBreakpoint="sm" hidden={!navbarOpened} width={{ sm: 200, lg: 300 }}>
       <Stack spacing={0}>
         <Text weight="bold">Vu au cinéma en ...</Text>
         <Space h="md" />
-        <Button component={Link} to='/list/2022' variant="default">2022</Button>
-        <Button component={Link} to='/list/2021' variant="default">2021</Button>
+        {renderListLinks}
       </Stack>
     </MTNavbar>
   );

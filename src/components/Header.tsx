@@ -23,7 +23,7 @@ function Header({ navbarOpened, setNavbarOpened }: Props) {
 
         <Link to='/'>
           <Group spacing="sm">
-            <FilmIcon width="2rem" />
+            <FilmIcon width="3rem" />
             <Text size='xl' weight='bold'>SC Stats</Text>
           </Group>
         </Link>
