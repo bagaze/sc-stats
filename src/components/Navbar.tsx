@@ -8,9 +8,17 @@ import {
 import { Link } from 'react-router-dom';
 import { USERLIST_IDS } from '../config/consts';
 
-function Navbar({navbarOpened}: Props) {
+function Navbar({navbarOpened, setNavbarOpened}: Props) {
   const renderListLinks = Object.keys(USERLIST_IDS).sort().reverse().map( (k) => (
-      <Button key={k} component={Link} to={`/list/${k}`} variant="default">{k}</Button>
+      <Button
+        key={k}
+        component={Link}
+        to={`/list/${k}`}
+        variant="default"
+        onClick={() => setNavbarOpened((o) => !o)}
+      >
+        {k}
+      </Button>
   ) );
 
   return (
@@ -28,4 +36,5 @@ export default Navbar;
 
 interface Props {
   navbarOpened: boolean
+  setNavbarOpened: (value: React.SetStateAction<boolean>) => void
 }

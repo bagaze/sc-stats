@@ -15,7 +15,7 @@ function App() {
       navbarOffsetBreakpoint="sm"
       fixed
       navbar={
-        <Navbar navbarOpened={navbarOpened} />
+        <Navbar navbarOpened={navbarOpened}  setNavbarOpened={setNavbarOpened} />
       }
       footer={
         <Footer />
