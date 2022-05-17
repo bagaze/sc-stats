@@ -2,7 +2,8 @@ import {
   Stack,
   List,
   Title,
-  Text
+  Text,
+  Anchor,
 } from '@mantine/core'
 import { UserListData } from "../gql/stats"
 
@@ -15,7 +16,8 @@ export default function ContentDetail({ data }: Props) {
       </Stack>
     )
   } else {
-    const { userList: { label, productCount, productsList: { items } } } = data;
+    const { userList: { label, productCount, url, productsList: { items } } } = data;
+    const sc_url = `https://www.senscritique.com${url}`;
 
     // Calculate the average rating
     const sum = items.reduce((total, item) => {
@@ -44,6 +46,9 @@ export default function ContentDetail({ data }: Props) {
       <>
         <Stack spacing="sm">
           <Title order={1}>{label}</Title>
+          <Anchor href={sc_url} target="_blank" color='dimmed' weight={500} style={{width: 'fit-content'}}>
+            Accéder à la liste sur SensCritique
+          </Anchor>
           <Title order={3}>Nombre de films</Title>
           <Text>{productCount}</Text>
           <Title order={3}>Note moyenne</Title>
