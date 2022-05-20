@@ -6,6 +6,8 @@ Usage is personal and allows to extract data from my "Seen in film theater in XX
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Application deployed using Netlify: [SC Stats](https://sc-stats-bagaze.netlify.app/list/2021)
+
 ## Setup
 
 ### Dev
