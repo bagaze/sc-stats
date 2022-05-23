@@ -50,7 +50,7 @@ export default function ContentDetail({ data }: Props) {
             Accéder à la liste sur SensCritique
           </Anchor>
           <Title order={3}>Nombre de films</Title>
-          <Text>{productCount}</Text>
+          <Text>{items.length}</Text>
           <Title order={3}>Note moyenne</Title>
           <Text>{avg.toFixed(2)}</Text>
           <Title order={3}>Nombre de salles différentes</Title>
