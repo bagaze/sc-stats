@@ -6,7 +6,7 @@ Usage is personal and allows to extract data from my "Seen in film theater in XX
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Application deployed using Netlify: [SC Stats](https://sc-stats-bagaze.netlify.app/list/2021)
+Application deployed using Netlify: [SC Stats](https://sc-stats-bagaze.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5ea611c8-34e7-41d1-8724-e906b092f879/deploy-status)](https://app.netlify.com/sites/sc-stats-bagaze/deploys)
 
