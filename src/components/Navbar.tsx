@@ -15,7 +15,7 @@ function Navbar({navbarOpened, setNavbarOpened}: Props) {
         component={Link}
         to={`/list/${k}`}
         variant="default"
-        onClick={() => setNavbarOpened((o) => !o)}
+        onClick={() => setNavbarOpened(() => false)}
       >
         {k}
       </Button>

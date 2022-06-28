@@ -21,7 +21,7 @@ function Header({ navbarOpened, setNavbarOpened }: Props) {
           />
         </MediaQuery>
 
-        <Link to='/'>
+        <Link to='/' onClick={() => setNavbarOpened(() => false)}>
           <Group spacing="sm">
             <FilmIcon width="3rem" />
             <Text size='xl' weight='bold'>SC Stats</Text>
