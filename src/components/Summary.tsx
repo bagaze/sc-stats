@@ -16,7 +16,7 @@ export default function Summary({ data }: Props) {
       </Stack>
     )
   } else {
-    const { userList: { label, productCount, url, productsList: { items } } } = data;
+    const { userList: { label, url, productsList: { items } } } = data;
     const sc_url = `https://www.senscritique.com${url}`;
 
     // Calculate the average rating
@@ -24,7 +24,7 @@ export default function Summary({ data }: Props) {
       total += item.product.otherUserInfos.rating;
       return total
     }, 0);
-    const avg = sum / productCount;
+    const avg = sum / items.length;
 
     // Retrieve the list of movie theaters (sorted)
     const sortedMovieTheatersList: {[k: string]: number} = Object.entries(
