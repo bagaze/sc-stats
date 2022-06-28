@@ -4,10 +4,10 @@ import {
   Title,
   Text,
   Anchor,
-} from '@mantine/core'
-import { UserListData } from "../gql/stats"
+} from '@mantine/core';
+import { UserListData } from "../gql/stats";
 
-export default function ContentDetail({ data }: Props) {
+export default function Summary({ data }: Props) {
   if (!data) {
     return (
       <Stack spacing="md">
@@ -37,7 +37,7 @@ export default function ContentDetail({ data }: Props) {
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
 
     const listItems = Object.entries(sortedMovieTheatersList).map( ([filmTheater, numberOfVisit]) => (
-      <List.Item>
+      <List.Item key={filmTheater}>
         <Text component='span' style={{fontWeight: 600}}>{filmTheater}</Text>: {numberOfVisit}
       </List.Item>
     ) );

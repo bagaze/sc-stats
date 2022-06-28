@@ -11080,6 +11080,7 @@ __metadata:
     react-dom: ^18.1.0
     react-router-dom: 6
     react-scripts: 5.0.1
+    ts-luxon: ^3.3.2
     typescript: ^4.4.2
     web-vitals: ^2.1.0
   languageName: unknown
@@ -12060,6 +12061,13 @@ __metadata:
   dependencies:
     tslib: ^2.1.0
   checksum: bb07d56fe4aae69d8860e0301dfdee2d375281159054bc24bf1e49e513fb0835bf7f70a11351344d213a79199c5e695f37ebbf5a447188a377ce0cd81d91ddb5
+  languageName: node
+  linkType: hard
+
+"ts-luxon@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "ts-luxon@npm:3.3.2"
+  checksum: 13fa58827b7a42fa9dac11401e6cdcae14282f6b37908cec79030e50f89526c408a2d9635f56c8b36cceb343ecc77da3614fe5e91f031352978c2d360335d13e
   languageName: node
   linkType: hard
 

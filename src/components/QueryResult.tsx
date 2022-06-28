@@ -43,5 +43,5 @@ export default function QueryResult({loading, error, children}: Props) {
 interface Props {
   loading: boolean
   error: ApolloError | undefined
-  children: JSX.Element
+  children: React.ReactNode
 }
