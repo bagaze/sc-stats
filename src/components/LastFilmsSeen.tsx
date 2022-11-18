@@ -19,7 +19,7 @@ export default function LastFilmsSeen({ data }: Props ) {
   } else {
     const rows = data.userList.productsList.items.map((el) => (
       <tr key={el.product.id}>
-        <td>{el.product.title}</td>
+        <td><a className="movie-title" href={`https://www.senscritique.com/${el.product.url}` } rel="noreferrer" target="_blank">{el.product.title}</a></td>
         <td><StarRating rating={el.product.otherUserInfos.rating} /></td>
         <td>
           <DateDone data={el.product.otherUserInfos.dateDone} />

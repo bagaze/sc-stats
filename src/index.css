@@ -16,3 +16,8 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+.movie-title:hover {
+  color: #363636;
+  text-decoration: underline;
+}

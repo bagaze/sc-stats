@@ -50,6 +50,7 @@ export const GET_USER_LIST = gql`
     rating
     title
     universe
+    url
     medias {
       picture
     }
@@ -98,6 +99,7 @@ interface ProductNanoData {
   id: number
   rating: number
   title: string
+  url: string
   universe: number
   medias: {
     picture: string
