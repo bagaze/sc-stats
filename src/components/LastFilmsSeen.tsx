@@ -1,14 +1,9 @@
-import {
-  Stack,
-  Title,
-  Text,
-  Table,
-} from "@mantine/core";
+import { Stack, Title, Text, Table } from "@mantine/core";
 import { UserListData } from "../gql/stats";
 import DateDone from "./DateDone";
 import StarRating from "./StarRating";
 
-export default function LastFilmsSeen({ data }: Props ) {
+export default function LastFilmsSeen({ data }: Props) {
   if (!data) {
     return (
       <Stack spacing="md">
@@ -19,8 +14,19 @@ export default function LastFilmsSeen({ data }: Props ) {
   } else {
     const rows = data.userList.productsList.items.map((el) => (
       <tr key={el.product.id}>
-        <td><a className="movie-title" href={`https://www.senscritique.com/${el.product.url}` } rel="noreferrer" target="_blank">{el.product.title}</a></td>
-        <td><StarRating rating={el.product.otherUserInfos.rating} /></td>
+        <td>
+          <a
+            className="movie-title"
+            href={`https://www.senscritique.com/${el.product.url}`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {el.product.title}
+          </a>
+        </td>
+        <td>
+          <StarRating rating={el.product.otherUserInfos.rating} />
+        </td>
         <td>
           <DateDone data={el.product.otherUserInfos.dateDone} />
         </td>
@@ -47,5 +53,5 @@ export default function LastFilmsSeen({ data }: Props ) {
 }
 
 interface Props {
-  data: UserListData | undefined
+  data: UserListData | undefined;
 }

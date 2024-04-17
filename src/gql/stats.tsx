@@ -1,10 +1,21 @@
 import { gql } from "@apollo/client";
 
 export const GET_USER_LIST = gql`
-  query UserList($id: Int!, $limit: Int, $offset: Int, $sortBy: ListProductsSortBis, $order: ListProductsOrder) {
+  query UserList(
+    $id: Int!
+    $limit: Int
+    $offset: Int
+    $sortBy: ListProductsSortBis
+    $order: ListProductsOrder
+  ) {
     userList(id: $id) {
       ...UserListMinimal
-      productsList(limit: $limit, offset: $offset, sortBy: $sortBy, order: $order) {
+      productsList(
+        limit: $limit
+        offset: $offset
+        sortBy: $sortBy
+        order: $order
+      ) {
         items {
           annotation
           position
@@ -82,78 +93,78 @@ export const GET_USER_LIST = gql`
 `;
 
 /*
- * TypeScript interfaces 
+ * TypeScript interfaces
  */
 
 interface ProductUserInfosData {
-  dateDone: string
-  rating: number
+  dateDone: string;
+  rating: number;
 }
 
 interface AuthorData {
-  id: number
-  username: string
+  id: number;
+  username: string;
 }
 
 interface ProductNanoData {
-  id: number
-  rating: number
-  title: string
-  url: string
-  universe: number
+  id: number;
+  rating: number;
+  title: string;
+  url: string;
+  universe: number;
   medias: {
-    picture: string
-  }
+    picture: string;
+  };
 }
 
 interface CountryData {
-  name: string
+  name: string;
 }
 
 interface PersonData {
-  name: string
-  person_id: number
+  name: string;
+  person_id: number;
 }
 
 interface GenreInfoData {
-  id: number
-  label: string
-  slug: string
+  id: number;
+  label: string;
+  slug: string;
 }
 
 interface ProductData extends ProductNanoData {
-  dateCreation: string
-  dateLastUpdate: string
-  dateRelease: string
-  dateReleaseUS: string
-  duration: number
-  frenchReleaseDate: string
-  countries: CountryData[]
-  directors: PersonData[]
-  distributors: PersonData[]
-  genresInfos: GenreInfoData[]
-  otherUserInfos: ProductUserInfosData
+  dateCreation: string;
+  dateLastUpdate: string;
+  dateRelease: string;
+  dateReleaseUS: string;
+  duration: number;
+  frenchReleaseDate: string;
+  countries: CountryData[];
+  directors: PersonData[];
+  distributors: PersonData[];
+  genresInfos: GenreInfoData[];
+  otherUserInfos: ProductUserInfosData;
 }
 
 interface ItemData {
-  annotation: string
-  position: number
-  product: ProductData
+  annotation: string;
+  position: number;
+  product: ProductData;
 }
 
 export interface UserListData {
   userList: {
-    commentCount: number
-    dateCreation: string
-    dateLastEdit: string
-    id: number
-    label: string
-    productCount: number
-    universe: number
-    url: string
-    author: AuthorData
+    commentCount: number;
+    dateCreation: string;
+    dateLastEdit: string;
+    id: number;
+    label: string;
+    productCount: number;
+    universe: number;
+    url: string;
+    author: AuthorData;
     productsList: {
-      items: ItemData[]
-    }
-  }
+      items: ItemData[];
+    };
+  };
 }

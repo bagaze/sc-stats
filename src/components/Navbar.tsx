@@ -1,15 +1,12 @@
-import {
-  Stack,
-  Navbar as MTNavbar,
-  Text,
-  Button,
-  Center,
-} from '@mantine/core';
-import { Link } from 'react-router-dom';
-import { USERLIST_IDS } from '../config/consts';
+import { Stack, Navbar as MTNavbar, Text, Button, Center } from "@mantine/core";
+import { Link } from "react-router-dom";
+import { USERLIST_IDS } from "../config/consts";
 
-function Navbar({navbarOpened, setNavbarOpened}: Props) {
-  const renderListLinks = Object.keys(USERLIST_IDS).sort().reverse().map( (k) => (
+function Navbar({ navbarOpened, setNavbarOpened }: Props) {
+  const renderListLinks = Object.keys(USERLIST_IDS)
+    .sort()
+    .reverse()
+    .map((k) => (
       <Button
         key={k}
         component={Link}
@@ -19,12 +16,19 @@ function Navbar({navbarOpened, setNavbarOpened}: Props) {
       >
         {k}
       </Button>
-  ) );
+    ));
 
   return (
-    <MTNavbar p="md" hiddenBreakpoint="sm" hidden={!navbarOpened} width={{ sm: 200, lg: 300 }}>
+    <MTNavbar
+      p="md"
+      hiddenBreakpoint="sm"
+      hidden={!navbarOpened}
+      width={{ sm: 200, lg: 300 }}
+    >
       <Stack spacing="xs">
-        <Center><Text weight="bold">Vu au cinéma en ...</Text></Center>
+        <Center>
+          <Text weight="bold">Vu au cinéma en ...</Text>
+        </Center>
         {renderListLinks}
       </Stack>
     </MTNavbar>
@@ -34,6 +38,6 @@ function Navbar({navbarOpened, setNavbarOpened}: Props) {
 export default Navbar;
 
 interface Props {
-  navbarOpened: boolean
-  setNavbarOpened: (value: React.SetStateAction<boolean>) => void
+  navbarOpened: boolean;
+  setNavbarOpened: (value: React.SetStateAction<boolean>) => void;
 }

@@ -1,12 +1,7 @@
-import {
-  Stack,
-  Title,
-  Skeleton,
-  Text
-} from "@mantine/core";
-import { ApolloError } from "@apollo/client"
+import { Stack, Title, Skeleton, Text } from "@mantine/core";
+import { ApolloError } from "@apollo/client";
 
-export default function QueryResult({loading, error, children}: Props) {
+export default function QueryResult({ loading, error, children }: Props) {
   if (loading) {
     return (
       <Stack spacing="md">
@@ -28,20 +23,18 @@ export default function QueryResult({loading, error, children}: Props) {
     return (
       <Stack spacing="md">
         <Title order={1}>Erreur</Title>
-        <Text>{error.name} - {error.message}</Text>
+        <Text>
+          {error.name} - {error.message}
+        </Text>
       </Stack>
     );
   }
 
-  return (
-    <>
-      { children }
-    </>
-  );
+  return <>{children}</>;
 }
 
 interface Props {
-  loading: boolean
-  error: ApolloError | undefined
-  children: React.ReactNode
+  loading: boolean;
+  error: ApolloError | undefined;
+  children: React.ReactNode;
 }

@@ -1,9 +1,9 @@
-import { useQuery } from '@apollo/client';
-import { USERLIST_IDS } from '../config/consts';
-import { GET_USER_LIST, UserListData } from '../gql/stats';
-import LastFilmsSeen from './LastFilmsSeen';
-import QueryResult from './QueryResult';
-import Summary from './Summary';
+import { useQuery } from "@apollo/client";
+import { USERLIST_IDS } from "../config/consts";
+import { GET_USER_LIST, UserListData } from "../gql/stats";
+import LastFilmsSeen from "./LastFilmsSeen";
+import QueryResult from "./QueryResult";
+import Summary from "./Summary";
 
 export default function ListContent({ year }: Props) {
   const options = {
@@ -11,9 +11,9 @@ export default function ListContent({ year }: Props) {
       id: USERLIST_IDS[year],
       limit: 500,
       offset: 0,
-      order: 'DESC',
-      sortBy: 'BY_DEFAULT'
-    }
+      order: "DESC",
+      sortBy: "BY_DEFAULT",
+    },
   };
   const { loading, error, data } = useQuery<UserListData>(
     GET_USER_LIST,
@@ -29,8 +29,8 @@ export default function ListContent({ year }: Props) {
       </QueryResult>
     </>
   );
-};
+}
 
 interface Props {
-  year: string,
+  year: string;
 }

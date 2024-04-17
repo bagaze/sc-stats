@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
-import { Stack, Title, Text } from '@mantine/core';
-import { USERLIST_IDS } from '../config/consts';
-import ListContent from '../components/ListContent';
+import { useParams } from "react-router-dom";
+import { Stack, Title, Text } from "@mantine/core";
+import { USERLIST_IDS } from "../config/consts";
+import ListContent from "../components/ListContent";
 
 function List() {
   const { year } = useParams();
@@ -14,9 +14,7 @@ function List() {
     );
   }
 
-  return (
-    <ListContent year={year} />
-  );
+  return <ListContent year={year} />;
 }
 
 export default List;

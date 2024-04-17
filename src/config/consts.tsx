@@ -1,4 +1,4 @@
-export const USERLIST_IDS: {[key: string]: number} = {
+export const USERLIST_IDS: { [key: string]: number } = {
   2024: 3710312,
   2023: 3372745,
   2022: 3159777,
@@ -6,5 +6,5 @@ export const USERLIST_IDS: {[key: string]: number} = {
   2020: 2575430,
   2019: 2301550,
   2018: 1959544,
-  2017: 1627808
+  2017: 1627808,
 };
