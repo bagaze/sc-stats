@@ -6,7 +6,7 @@ import StarRating from "./StarRating";
 export default function LastFilmsSeen({ data }: Props) {
   if (!data) {
     return (
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>Erreur</Title>
         <Text>Liste vide</Text>
       </Stack>

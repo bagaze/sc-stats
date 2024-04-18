@@ -1,11 +1,7 @@
-import { Center, Footer as MTFooter } from "@mantine/core";
+import { Center } from "@mantine/core";
 
 function Footer() {
-  return (
-    <MTFooter height={60} p="md">
-      <Center style={{ width: "100%" }}>©BaGaze</Center>
-    </MTFooter>
-  );
+  return <Center style={{ width: "100%" }}>©BaGaze</Center>;
 }
 
 export default Footer;

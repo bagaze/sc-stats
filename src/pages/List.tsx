@@ -7,7 +7,7 @@ function List() {
   const { year } = useParams();
   if (!year || !Object.keys(USERLIST_IDS).includes(year)) {
     return (
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>404 - Does not exist</Title>
         <Text>Liste non existante</Text>
       </Stack>

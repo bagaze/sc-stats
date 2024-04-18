@@ -1,8 +1,8 @@
-import { Stack, Navbar as MTNavbar, Text, Button, Center } from "@mantine/core";
+import { Stack, Text, Button, Center } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { USERLIST_IDS } from "../config/consts";
 
-function Navbar({ navbarOpened, setNavbarOpened }: Props) {
+function Navbar({ toggle }: Props) {
   const renderListLinks = Object.keys(USERLIST_IDS)
     .sort()
     .reverse()
@@ -12,32 +12,24 @@ function Navbar({ navbarOpened, setNavbarOpened }: Props) {
         component={Link}
         to={`/list/${k}`}
         variant="default"
-        onClick={() => setNavbarOpened(() => false)}
+        onClick={() => toggle(() => false)}
       >
         {k}
       </Button>
     ));
 
   return (
-    <MTNavbar
-      p="md"
-      hiddenBreakpoint="sm"
-      hidden={!navbarOpened}
-      width={{ sm: 200, lg: 300 }}
-    >
-      <Stack spacing="xs">
-        <Center>
-          <Text weight="bold">Vu au cinéma en ...</Text>
-        </Center>
-        {renderListLinks}
-      </Stack>
-    </MTNavbar>
+    <Stack gap="xs">
+      <Center>
+        <Text fw={700}>Vu au cinéma en ...</Text>
+      </Center>
+      {renderListLinks}
+    </Stack>
   );
 }
 
 export default Navbar;
 
 interface Props {
-  navbarOpened: boolean;
-  setNavbarOpened: (value: React.SetStateAction<boolean>) => void;
+  toggle: (value: React.SetStateAction<boolean>) => void;
 }

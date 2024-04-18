@@ -1,42 +1,32 @@
-import {
-  Header as MTHeader,
-  MediaQuery,
-  Text,
-  Burger,
-  Group,
-} from "@mantine/core";
+import { Text, Burger, Group } from "@mantine/core";
 import { Link } from "react-router-dom";
 import FilmIcon from "../img/film.svg?react";
+import { MouseEventHandler } from "react";
 
-function Header({ navbarOpened, setNavbarOpened }: Props) {
+function Header({ opened, toggle, close }: Props) {
   return (
-    <MTHeader height={70} p="md">
-      <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
-        <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-          <Burger
-            opened={navbarOpened}
-            onClick={() => setNavbarOpened((o) => !o)}
-            size="sm"
-            mr="xl"
-          />
-        </MediaQuery>
-
-        <Link to="/" onClick={() => setNavbarOpened(() => false)}>
-          <Group spacing="sm">
-            <FilmIcon width="3rem" />
-            <Text size="xl" weight="bold">
-              SC Stats
-            </Text>
-          </Group>
-        </Link>
-      </div>
-    </MTHeader>
+    <Group h="100%" px="md">
+      <Burger
+        opened={opened}
+        onClick={toggle}
+        hiddenFrom="sm"
+        size="sm"
+        mr="xl"
+      />
+      <Link to="/" onClick={() => close}>
+        <FilmIcon width="3rem" />
+        <Text size="xl" fw={700}>
+          SC Stats
+        </Text>
+      </Link>
+    </Group>
   );
 }
 
 export default Header;
 
 interface Props {
-  navbarOpened: boolean;
-  setNavbarOpened: (value: React.SetStateAction<boolean>) => void;
+  opened: boolean;
+  toggle: MouseEventHandler<HTMLButtonElement>;
+  close: MouseEventHandler<HTMLButtonElement>;
 }

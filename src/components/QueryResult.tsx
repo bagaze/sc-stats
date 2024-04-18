@@ -4,7 +4,7 @@ import { ApolloError } from "@apollo/client";
 export default function QueryResult({ loading, error, children }: Props) {
   if (loading) {
     return (
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>Vu au cinéma en ...</Title>
         <Skeleton height={8} radius="xl" width="50%" />
         <Skeleton height={8} radius="xl" width="70%" />
@@ -21,7 +21,7 @@ export default function QueryResult({ loading, error, children }: Props) {
 
   if (error) {
     return (
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>Erreur</Title>
         <Text>
           {error.name} - {error.message}

@@ -4,7 +4,7 @@ import { UserListData } from "../gql/stats";
 export default function Summary({ data }: Props) {
   if (!data) {
     return (
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>Erreur</Title>
         <Text>Liste vide</Text>
       </Stack>
@@ -49,13 +49,13 @@ export default function Summary({ data }: Props) {
 
     return (
       <>
-        <Stack spacing="sm">
+        <Stack gap="sm">
           <Title order={1}>{label}</Title>
           <Anchor
             href={sc_url}
             target="_blank"
-            color="dimmed"
-            weight={500}
+            c="dimmed"
+            fw={700}
             style={{ width: "fit-content" }}
           >
             Accéder à la liste sur SensCritique

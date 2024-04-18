@@ -3,7 +3,7 @@ import { Title, Text, Stack } from "@mantine/core";
 function Index() {
   return (
     <>
-      <Stack spacing="md">
+      <Stack gap="md">
         <Title order={1}>Hello!</Title>
         <Text>
           Voilà maintenant plusieurs années que je liste chacun des films vus au
